@@ -38,6 +38,9 @@ let friend = require("./mock/friend.json");
 //获取搜索列表
 let foodList = require("./mock/foodList.json");
 
+app.get("/", function (req, res) {
+    res.json(HList);
+});
 app.get("/hlist", function (req, res) {
     res.json(HList);
 });
