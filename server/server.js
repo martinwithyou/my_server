@@ -47,25 +47,21 @@ app.get("/", function (req, res) {
 
 
 app.post('/search', function (req, res) {
-    let searchList = [];
-    let find = req.body;
-    let reg = new RegExp(find.searchFood, 'i');
-    foodList.forEach(item => {
-        searchList = [...searchList, ...item.data.find_recipe.filter(item => {
-            return reg.test(item.recipe_name) || reg.test(item.recipe_info)
-        })]
-    });
-    res.json({
-        searchList: searchList.slice(0, find.limit),
-        isLoading: false,
-        limit: find.limit,
-        keyword: find.searchFood
-    });
+ 
+    let ressoult={
+        res:"success",
+        mes:"你好。。。。。"
+    }
+    res.json(ressoult);
 });
 
 app.post('/searchIndex', function (req, res) {
     let find = req.body;
-    res.json(foodList[find.index]);
+    let res={
+        res:"success",
+        mes:"你好。。。。。"
+    }
+    res.json(res);
 });
 
 app.listen(3000, function () {
